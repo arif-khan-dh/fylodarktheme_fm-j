@@ -1,0 +1,62 @@
+@use './functions' as fun;
+@use './colors';
+
+$breakpoint-up: (
+    "xxxxlarge": fun.toRem(1440px),
+    "xxxlarge": fun.toRem(1218px),
+    "xxlarge": fun.toRem(1130px),
+    // "xxlarge": fun.toRem(1130px),
+    "xlarge": fun.toRem(955px),
+    "large": fun.toRem(720px), 
+    "medium": fun.toRem(620px), 
+    "small": fun.toRem(460px)
+);
+
+@mixin breakpoint-down ($size) {
+    @media (max-width: map-get($breakpoint-down, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-up ($size) {
+    @media (min-width: map-get($breakpoint-up, $size )){
+        @content;
+    }
+}
+
+@mixin gap-below-illustration() {
+    margin-top: fun.toRem(46px);
+
+    @include breakpoint-up(small) {
+        margin-top: 10vmin;    
+    }
+
+    @include breakpoint-up(large) {
+        margin-top: 0;    
+    }
+}
+
+@mixin dynamic-width($size) {
+    $width: map-get($map: $breakpoint-up, $key: $size);
+
+    .email{
+        width: 63%;
+    }
+
+    .btn {
+        width: 35%;
+        margin-top: 0;
+        margin-left: fun.toRem(10px);
+    }
+}
+
+@mixin  widen {
+    margin-left: calc(calc(50vw - 50%) * -1);
+    padding-left: calc(50vw - 50%);
+    width: calc(100vw - 8px);
+    padding-right: calc(50vw - 50%);
+}
+
+@mixin box-shadow() {
+    box-shadow: 0 fun.toRem(5px) fun.toRem(5px) rgba($color: colors.$light-gray, $alpha: 0.7);
+}

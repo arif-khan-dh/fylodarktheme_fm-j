@@ -1,0 +1,15 @@
+@function toRem($pxVal) {
+    @return $pxVal / 16px * 1rem;
+}
+
+@function increaseBy($val, $byPercentage) {
+    @return $val*($byPercentage/100) + $val;
+}
+
+@function multiply($a, $b) {
+    @return $a * $b;
+}
+
+@function getPercentageOf($value, $percent) {
+    @return $value * $percent / 100;
+}

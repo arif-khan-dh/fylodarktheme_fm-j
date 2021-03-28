@@ -1,0 +1,34 @@
+@use './1-abstracts/functions' as fu;
+@use './1-abstracts/fonts' as fo;
+@use './1-abstracts/mixins' as m;
+
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap);
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+:root {
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 89%;
+    min-width: fu.toRem(375px);
+
+}

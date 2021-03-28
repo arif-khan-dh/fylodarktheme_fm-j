@@ -1,0 +1,7 @@
+@use './1-abstracts/fonts' as fo;
+@use './1-abstracts/functions' as fu;
+@use './1-abstracts/mixins' as m;
+
+.container {
+    font-family: fo.$font-opensans;
+}
