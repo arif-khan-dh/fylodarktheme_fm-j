@@ -1,0 +1,52 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+.navbar {
+
+    // ul {
+    //     list-style: none;
+    //     padding: 0;
+    //     margin: 0;
+    // }
+
+    li {
+        display: inline-block;
+        width: fu.toRem(70px);
+
+        &:not(:last-child) {
+            margin-right: fu.toRem(20px);
+        }
+
+        &:nth-child(2) {
+            width: fu.toRem(40px);
+        }
+  
+        &:nth-child(3) {
+            width: fu.toRem(60px);
+        }
+    }
+
+    a {
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            // --transition: 250ms;
+            content: ".";
+            position: absolute;
+            color: transparent;
+            background-color: white ;
+            height: 1px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 0%;
+            margin: auto;
+            transition: width var(--transition) ease-in-out;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@use '../1-abstracts/functions' as fu;
+
+.testimonials {
+    height: fu.toRem(548px);
+    width: 76%;
+    display: flex;
+    flex-flow: row wrap;
+    background-image: url(../../../images/bg-quotes.png);
+    background-repeat: no-repeat;
+    background-size: auto fu.toRem(20px);
+
+
+    .card {
+        width: 100%;
+        margin-top: fu.toRem(20px);
+    }
+}

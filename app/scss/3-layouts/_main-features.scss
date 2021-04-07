@@ -1,0 +1,43 @@
+@use '../1-abstracts/functions' as fu;
+
+.features {
+    --h: #{fu.toRem(1028px)};
+    height: var(--h);
+    // padding: 0 9%;
+    width: 82%;
+    // display: flex;
+    // flex-flow: row wrap;
+    // align-content: space-between;
+
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr;
+    align-content: space-between;
+
+
+    .feature {
+        width: 100%;
+        height: fu.toRem(200px);
+
+        .icon {
+            width: 17%;
+            margin: 0 auto;
+        }
+
+        &:nth-child(1) {
+            height: fu.toRem(190px);
+        }
+
+        &:nth-child(2) {
+            height: fu.toRem(230px);
+        }
+
+        .text {
+            padding-top: fu.toRem(36px);
+
+            p {
+                padding-top: fu.toRem(16px);
+            }
+        }
+    }
+}

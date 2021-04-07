@@ -1,0 +1,53 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+.secondary {
+    height: fu.toRem(816px);
+    width: 87%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .illustration {
+        margin-top: auto;
+    }
+
+    .text {
+        margin-bottom: auto;
+        padding-top: fu.toRem(52px);
+
+        p, .link {
+            margin-top: fu.toRem(24px);
+        }
+
+        .link {
+            display: flex;
+            align-items: end;
+            border-bottom: 1px solid c.$cyan;
+            width: max-content;
+            padding-bottom: fu.toRem(6px);
+            transition: border-bottom-color var(--transition) ease-in-out;
+            
+            &:hover {
+                border-bottom: 1px solid white;
+
+                svg > g > g > use {
+                    fill: white;
+                }
+            }
+
+            .icon {
+                margin-left: fu.toRem(6px);
+                height: fu.toRem(17px);
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+
+                    g > g > use {
+                        transition: fill var(--transition) ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,39 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon.ico">
   <link rel="stylesheet" href="./dist/styles/styles.css">
-  <title>Fylo landing page with dark theme and features grid | Frontend Mentor</title>
+  <title>Fylo dark theme and features grid | Frontend Mentor</title>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo"></div>
-            <div class="navbar">
-                <a href="">Features</a>
-                <a href="">Team</a>
-                <a href="">Sign In</a>                    
+            <div class="logo">
+                <img src="./images/logo.svg" alt="Fylo logo">
             </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="">Features</a></li>
+                    <li><a href="">Team</a></li>
+                    <li><a href="">Sign In</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="main">
-            <div class="primary-hero">
-                <div class="illustration"></div>
-                <div class="cta">
-                    <h1 class="headline">All your files in one secure location, accessible anywhere.</h1>
-                    <p class="para">
-                        Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate with friends family, and co-workers.
-                    </p>
-                    <div class="btn">Get Started</div>
+            <div class="wrapper primary-wrapper">
+                <div class="primary hero">
+                    <div class="illustration">
+                        <img src="./images/illustration-intro.png" alt="All your files in one secure location, accessible anywhere.">
+                    </div>
+                    <div class="cta">
+                        <h2 class="headline">All your files in one secure location, accessible anywhere.</h2>
+                        <p class="para">
+                            Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate with friends family, and co-workers.
+                        </p>
+                        <div class="btn">Get Started</div>
+                    </div>
                 </div>
             </div>
             <div class="features">
                 <div class="feature">
-                    <div class="icon"></div>
+                    <div class="icon">
+                        <img src="./images/icon-access-anywhere.svg" alt="Access your files, anywhere">
+                    </div>
                     <div class="text">
                         <h3 class="headline">Access your files, anywhere</h3>
                         <p class="para">The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.</p>
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="icon"></div>
+                    <div class="icon">
+                        <img src="./images/icon-security.svg" alt="Security you can trust">
+                    </div>
                     <div class="text">
                         <h3 class="headline">Security you can trust</h3>
                         <p class="para">2-factor authentication and user-controlled encryption are just a couple of the security 
@@ -45,7 +57,9 @@
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="icon"></div>
+                    <div class="icon">
+                        <img src="./images/icon-collaboration.svg" alt="Real-time collaboration">
+                    </div>
                     <div class="text">
                         <h3 class="headline">Real-time collaboration</h3>
                         <p class="para">Securely share files and folders with friends, family and colleagues for live collaboration. 
@@ -53,7 +67,9 @@
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="icon"></div>
+                    <div class="icon">
+                        <img src="/images/icon-any-file.svg" alt="Store any type of file">
+                    </div>
                     <div class="text">
                         <h3 class="headline">Store any type of file</h3>
                         <p class="para">Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all 
@@ -61,17 +77,40 @@
                     </div>
                 </div>
             </div>
-            <div class="secondary-hero">
-                <div class="illustration"></div>
+            <div class="secondary hero">
+                <div class="illustration">
+                    <img src="./images/illustration-stay-productive.png" alt="Stay productive, wherever you are">
+                </div>
                 <div class="text">
-                    <h1 class="headline">Stay productive, wherever you are</h1>
+                    <h3 class="headline">Stay productive, wherever you are</h3>
                     <p class="para">Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
                         storage needs.</p>
                     <p class="para">Securely share files and folders with friends, family and colleagues for live collaboration. No email 
                         attachments required.</p>
-                        <div class="link">
-                            <a href="">See how Fylo works</a>
+                    <div class="link">
+                        <a href="">See how Fylo works</a>
+                        <div class="icon">
+                            <!-- <img src="./images/icon-arrow.svg" alt="See how Fylo works"> -->
+                            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                    <circle id="b" cx="6" cy="6" r="6"/>
+                                    <filter x="-25%" y="-25%" width="150%" height="150%" filterUnits="objectBoundingBox" id="a">
+                                        <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                        <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+                                        <feColorMatrix values="0 0 0 0 0.384313725 0 0 0 0 0.878431373 0 0 0 0 0.850980392 0 0 0 0.811141304 0" in="shadowBlurOuter1"/>
+                                    </filter>
+                                </defs>
+                                <g fill="none" fill-rule="evenodd">
+                                    <g transform="translate(2 2)">
+                                        <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+                                        <use fill="#62E0D9" xlink:href="#b"/>
+                                    </g>
+                                    <path d="M8.582 6l-.363.35 1.452 1.4H5.333v.5h4.338L8.22 9.65l.363.35 2.074-2z" fill="#1B2330"/>
+                                </g>
+                            </svg>
                         </div>
+                        
+                    </div>
                 </div>
             </div>
             <div class="testimonials">
@@ -79,7 +118,9 @@
                     <p class="para">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
                         become a well-oiled collaboration machine.</p>
                     <div class="info">
-                        <div class="profile-pic"></div>
+                        <div class="profile-pic icon">
+                            <img src="./images/profile-1.jpg" alt="Satish Patel">
+                        </div>
                         <div class="name">Satish Patel</div>
                         <div class="role">Founder & CEO, Huddle</div>
                     </div>
@@ -88,7 +129,9 @@
                     <p class="para">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
                         become a well-oiled collaboration machine.</p>
                     <div class="info">
-                        <div class="profile-pic"></div>
+                        <div class="profile-pic icon">
+                            <img src="./images/profile-2.jpg" alt="Bruce McKenzie">
+                        </div>
                         <div class="name">Bruce McKenzie</div>
                         <div class="role">Founder & CEO, Huddle</div>
                     </div>
@@ -97,59 +140,94 @@
                     <p class="para">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
                         become a well-oiled collaboration machine.</p>
                     <div class="info">
-                        <div class="profile-pic"></div>
+                        <div class="profile-pic icon">
+                            <img src="./images/profile-3.jpg" alt="Iva Boyd">
+                        </div>
                         <div class="name">Iva Boyd</div>
                         <div class="role">Founder & CEO, Huddle</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="subscription">
-               <div class="text">
-                   <h2 class="headline">Get early access today</h2>
-                   <p class="para">It only takes a minute to sign up and our free starter tier is extremely generous. If you have any 
-                    questions, our support team would be happy to help you.</p>
-               </div>
-               <div class="subscribe-input">
-                   <div class="email"><input type="email" placeholder="email@example.com"></div>
-                   <div class="btn">Get Started For Free</div>
-               </div>
-        </div>
-        <div class="footer">
-            <div class="logo"></div>
-            <div class="sub-logo">
-                <div class="text">
-                    <div class="icon"></div>
-                    <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua</p>
+        <div class="wrapper footer-wrapper">
+            <div class="footer">            
+                <div class="subscription">
+                   <div class="text">
+                       <h3 class="headline">Get early access today</h2>
+                       <p class="para">It only takes a minute to sign up and our free starter tier is extremely generous. If you have any 
+                        questions, our support team would be happy to help you.</p>
+                   </div>
+                   <div class="subs-io">
+                       <div class="email">
+                           <input type="email" placeholder="email@example.com">
+                           <div class="error-msg">
+                               <span>Please enter a valid email address</span>
+                           </div>
+                        </div>
+                       <div class="btn">Get Started For Free</div>
+                   </div>
                 </div>
-                <div class="contact">
-                    <div class="phone">
-                        <div class="icon"></div>
-                        <span>+1-543-123-4567</span>
-                    </div>
-                    <div class="email">
-                        <div class="icon"></div>
+                <div class="logo">
+                    <img src="./images/logo.svg" alt="Fylo logo">
+                </div>
+                <div class="sub-logo">
+                    <div class="info">
+                        <div class="icon">
+                            <img src="./images/icon-location.svg" alt="Location">
+                        </div>
+                        <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                            dolore magna aliqua</p>
+                        <div class="icon">
+                            <img src="./images/icon-phone.svg" alt="Phone no">
+                        </div>
+                        <span class="phone">+1-543-123-4567</span>
+                        <div class="icon">
+                            <img src="./images/icon-email.svg" alt="Email address">
+                        </div>
                         <span>example@fylo.com</span>
                     </div>
-                </div>
-                <div class="links">
-                    <div class="link-group">
-                        <div class="link">About Us</div>
-                        <div class="link">Jobs</div>
-                        <div class="link">Press</div>
-                        <div class="link">Blog</div>
+                    <div class="links">
+                        <ul class="link-group">
+                            <li class="link"><a href="">About Us</a></li>
+                            <li class="link"><a href="">Jobs</a></li>
+                            <li class="link"><a href="">Press</a></li>
+                            <li class="link"><a href="">Blog</a></li>
+                        </ul>
+                        <ul class="link-group">
+                            <li class="link"><a href="">Contact Us</a></li>
+                            <li class="link"><a href="">Terms</a></li>
+                            <li class="link"><a href="">Privacy</a></li>
+                        </ul>
                     </div>
-                    <div class="link-group">
-                        <div class="link">Contact Us</div>
-                        <div class="link">Terms</div>
-                        <div class="link">Privacy</div>   
+                    <div class="socials">
+                        <div class="icon">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path 
+                                    fill="currentColor" 
+                                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                                </path>
+                            </svg>
+                            <span class="tooltip">Facebook</span>
+                        </div>
+                        <div class="icon">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path 
+                                    fill="currentColor" 
+                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                                </path>
+                            </svg>
+                            <span class="tooltip">Twitter</span>
+                        </div>
+                        <div class="icon">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path 
+                                    fill="currentColor" 
+                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                </path>
+                            </svg>
+                            <span class="tooltip">Instagram</span>
+                        </div>
                     </div>
-                </div>
-                <div class="socials">
-                    <div class="icon"></div>
-                    <div class="icon"></div>
-                    <div class="icon"></div>
                 </div>
             </div>
         </div>

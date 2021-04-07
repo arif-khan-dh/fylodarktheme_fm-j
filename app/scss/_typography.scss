@@ -1,7 +1,125 @@
 @use './1-abstracts/fonts' as fo;
 @use './1-abstracts/functions' as fu;
 @use './1-abstracts/mixins' as m;
+@use './1-abstracts/colors' as c;
+
+:root {
+    --color: white;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--color);
+    margin: 0;
+
+    &:hover {
+        font-weight: 700;
+    }
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
 
 .container {
     font-family: fo.$font-opensans;
+    color: var(--color);
+    text-align: center;
+}
+
+p.para {
+    font-size: fo.$size-xsm;
+}
+
+.btn {
+    color: white;
+    font-family: fo.$font-raleway;
+    font-weight: 700;
+}
+
+.navbar {
+    a {
+        font-size: fo.$size-xsm;
+    }
+}
+
+.secondary {
+    text-align: left;
+
+    a {
+        color: c.$cyan;
+        font-size: fo.$size-xsm;
+        transition: color var(--transition) ease-in-out;
+    }
+
+    .link:hover {
+        a {
+            font-weight: 400;
+            color: white;
+        }
+    }
+}
+
+.card {
+    text-align: left;
+    font-size: fo.$size-xxxsm;
+
+    p {
+        font-size: fo.$size-xxsm;
+        line-height: 1.5em;
+    }
+    
+    .info {
+
+        .name {
+            font-weight: 700;
+            font-size: fo.$size-xxsm;
+        }
+
+        .role {
+            font-size: fo.$size-xxxsm;
+        }
+    }
+}
+
+.subscription {
+
+    .headline {
+        font-weight: 700;
+        font-size: fo.$size-sm;
+    }
+
+    .para {
+        line-height: 1.6em;
+    }
+
+    input {
+        font-size: fo.$size-xxsm;
+    }
+
+    .error-msg {
+        font-size: fo.$size-xxsm;
+        color: c.$light-red;
+    }
+
+    .btn {
+        font-size: fo.$size-xxsm;
+    }
+}
+
+.footer {
+
+    .sub-logo {
+        font-size: fo.$size-xsm;
+        text-align: left;
+
+        .phone {
+            // font-size: fo.$size-xsm;
+        }
+    }
+
+    .tooltip {
+        font-size: fo.$size-xxsm;
+    }
 }

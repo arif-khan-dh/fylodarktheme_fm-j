@@ -1,2 +1,15 @@
+@use './2-components/logo';
+@use './2-components/navbar';
+@use './2-components/btn';
+@use './2-components/card';
+
 @use './typography';
 @use './home';
+@use './3-layouts/header';
+@use './3-layouts/main';
+@use './3-layouts/main-primary-hero';
+@use './3-layouts/main-features';
+@use './3-layouts/main-secondary-hero';
+@use './3-layouts/main-testimonials';
+@use './3-layouts/subscription';
+@use './3-layouts/footer';

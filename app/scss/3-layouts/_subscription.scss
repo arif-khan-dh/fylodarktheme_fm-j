@@ -1,0 +1,59 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+.subscription {
+    --h: #{fu.toRem(358px)};
+    position: absolute;
+    top: calc(-0.5 * var(--h));
+    width: 100%;
+    height: var(--h);
+    padding: 0 fu.toRem(24px) fu.toRem(38px);
+    background-color: c.$dark-blue1-intro;
+    border-radius: fu.toRem(12px);
+    display: flex;
+    flex-flow: column nowrap;
+    box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.3);
+
+    .text {
+        margin-top: auto;
+
+        .headline {
+            padding-bottom: fu.toRem(24px);
+        }
+
+        .para{
+            padding-bottom: fu.toRem(28px);
+        }        
+    }
+
+    .subs-io {
+        
+        .email {
+            margin-bottom: fu.toRem(24px);
+
+            input {
+                width: 100%;
+                height: var(--btn-input-height);
+                border-radius: var(--btn-input-border-radius);
+                padding-left: fu.toRem(30px);
+                outline: none;
+
+                &:invalid, &:focus:invalid {
+                    box-shadow: none;
+                }
+            }
+
+            .error-msg {
+                max-height: 0;
+                opacity: 0;
+                transition: all var(--transition) ease-in-out;
+            }
+
+            :is(input:invalid, input:focus:invalid) ~ .error-msg {
+                margin-top: fu.toRem(5px);
+                max-height: 20px;
+                opacity: 1;
+            }
+        }
+    }
+}

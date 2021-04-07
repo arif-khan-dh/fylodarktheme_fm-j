@@ -1,6 +1,7 @@
 @use './1-abstracts/functions' as fu;
 @use './1-abstracts/fonts' as fo;
 @use './1-abstracts/mixins' as m;
+@use './1-abstracts/colors' as c;
 
 @import url(https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap);
@@ -15,7 +16,12 @@ html {
 }
 
 :root {
-
+    --btn-input-height: #{fu.toRem(46px)};
+    --btn-input-border-radius: #{fu.toRem(30px)};
+    --transition: 250ms;
+    --container-width: 89%;
+    --wrapper-child-width: calc(var(--container-width) * calc(89 / 100));
+    --mb-primary-hero-height: #{fu.toRem(720px)};    
 }
 
 body {
@@ -25,10 +31,43 @@ body {
 
     display: flex;
     justify-content: center;
+
+    // debug
+    // background-color: gray;
+    background-image: linear-gradient(c.$dark-blue1-intro fu.toRem(700px), c.$dark-blue2-main fu.toRem(700px));
+}
+
+img, input {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .container {
-    width: 89%;
+    width: var(--container-width);
     min-width: fu.toRem(375px);
 
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    // background-color: c.$dark-blue1-intro;
+    // background-image: linear-gradient(c.$dark-blue1-intro fu.toRem(700px), c.$dark-blue2-main fu.toRem(700px));
+
+}
+
+.wrapper {
+    width: calc(100vw - 17px);
+    // margin-left: calc(calc(-50vw + 50%) + 8px);
+}
+
+.illustration, .icon {
+    
+    img {
+        width: 100%;
+    }
 }

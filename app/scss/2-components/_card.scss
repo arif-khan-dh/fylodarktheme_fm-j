@@ -1,0 +1,32 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+.card {
+    min-width: fu.toRem(286px);
+    background-color: c.$dark-blue4-testimonial;
+    height: 162px;
+    border-radius: fu.toRem(5px);
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0 fu.toRem(20px);
+    
+    .para {
+        margin-top: auto;
+        padding-bottom: fu.toRem(16px);
+    }
+
+    .info {
+        padding-bottom: fu.toRem(16px);
+        display: flex;
+        flex-flow: column wrap;
+        align-content: flex-start;
+        height: fu.toRem(48px);
+
+        .profile-pic {
+            width: 28px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: fu.toRem(10px);            
+        }
+    }
+}

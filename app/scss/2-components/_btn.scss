@@ -1,0 +1,20 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+.btn {
+    // --btn-input-height: #{fu.toRem(46px)};
+    // --btn-input-border-radius: #{fu.toRem(30px)};
+    cursor: pointer;
+    background-color: c.$blue;
+    height: var(--btn-input-height);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: var(--btn-input-border-radius);
+    transition: filter var(--transition) ease-in-out;
+    
+    &:hover, &:focus {
+        filter: brightness(1.3);
+    }
+}

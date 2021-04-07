@@ -1,0 +1,11 @@
+@use '../1-abstracts/functions' as fu;
+
+.logo {
+    // width: 23%;
+    width: fu.toRem(84px);
+    // min-width: fu.toRem(84px);
+
+    img {
+        width: 100%;
+    }
+}

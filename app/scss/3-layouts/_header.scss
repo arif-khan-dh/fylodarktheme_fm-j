@@ -1,0 +1,12 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+.header {
+    align-self: center;
+    padding-top: fu.toRem(24px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: c.$dark-blue1-intro ;
+    width: 88%;
+}

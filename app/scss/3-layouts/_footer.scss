@@ -1,0 +1,114 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+.footer-wrapper {
+    background-color: c.$dark-blue3-footer;
+    margin-top: fu.toRem(336px);
+}
+
+.footer {
+    --wrapper-child-width: calc(var(--container-width) * calc(89 / 100));
+    margin: 0 auto;
+    padding-top: fu.toRem(256px);
+    height: fu.toRem(1032px);
+    width: var(--wrapper-child-width);
+    // width: calc(var(--container-width) * var(--container-width));    
+    position: relative;
+    
+
+    .logo {
+        width: 47%;
+        max-width: fu.toRem(200px);
+        padding-left: fu.toRem(20px);
+    }
+
+    .sub-logo {
+        padding-top: fu.toRem(48px);
+
+        .info {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto repeat(2, 1fr);
+            gap: fu.toRem(22px);
+
+            .icon {
+                width: fu.toRem(16px);
+                display: inline-block;
+                align-self: center;
+
+                &:first-child {
+                    align-self: flex-start;
+                    padding-top: fu.toRem(4px);
+                }
+            }
+        }
+
+        .links {
+            padding-top: fu.toRem(30px);
+
+            .link-group {
+                padding-top: fu.toRem(54px);
+
+                .link {
+                    &:not(:first-child) {
+                        padding-top: fu.toRem(22px);
+                    }
+                }
+            }
+        }
+
+        .socials {
+            padding-top: fu.toRem(74px);
+            display: flex;
+            justify-content: center;
+            
+            .icon {
+                --d: #{fu.toRem(28px)};
+                width: var(--d);
+                height: var(--d);      
+                border: fu.toRem(1px) solid white;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: border-color var(--transition) ease-in-out;
+                position: relative;
+
+                &:not(:first-child) {
+                    margin-left: 16px;
+                }
+                
+                &:hover {
+                    border-color: c.$cyan;
+
+                    svg > path{
+                        fill: c.$cyan;
+                    }
+
+                    .tooltip {
+                        opacity: 1;
+                    }
+                }
+
+                svg {
+                    width: 50%;
+                    height: 50%;
+                    
+                    path {
+                        transition: fill var(--transition) ease-in-out;
+                    }
+                }
+
+                .tooltip {
+                    opacity: 0;
+                    position: absolute;
+                    background-color: c.$dark-blue4-testimonial;
+                    padding: fu.toRem(6px);
+                    border-radius: fu.toRem(3px);
+                    bottom: 140%;
+                    transition: opacity var(--transition) ease-in-out;
+                }
+            }
+        }
+    }
+}
