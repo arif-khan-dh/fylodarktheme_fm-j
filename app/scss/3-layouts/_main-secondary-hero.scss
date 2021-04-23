@@ -40,12 +40,15 @@
             margin-top: auto;
             // width: 50%;
             width: 42%;
-            // padding-left: fu.toRem(50px);
             padding-top: fu.toRem(64px);            
         }
 
         .headline {
-            max-width: fu.toRem(360px);
+            width: 100%;
+
+            @include m.breakpoint-up(large) {
+                max-width: fu.toRem(360px);
+            }            
         }
 
         .para {

@@ -456,7 +456,12 @@ ul {
   }
 }
 .secondary .text .headline {
-  max-width: 22.5rem;
+  width: 100%;
+}
+@media (min-width: 46.0625rem) {
+  .secondary .text .headline {
+    max-width: 22.5rem;
+  }
 }
 .secondary .text .para {
   padding-top: 1.5rem;
