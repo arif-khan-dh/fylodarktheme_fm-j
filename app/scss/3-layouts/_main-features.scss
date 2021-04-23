@@ -1,35 +1,50 @@
 @use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/mixins' as m;
 
 .features {
     --h: #{fu.toRem(1028px)};
     height: var(--h);
     // padding: 0 9%;
     width: 82%;
-    // display: flex;
-    // flex-flow: row wrap;
-    // align-content: space-between;
-
     display: grid;
-    grid-auto-rows: auto;
     grid-template-columns: 1fr;
+    justify-items: center;
     align-content: space-between;
+
+    @include m.breakpoint-up(large) {
+        grid-template-columns: 1fr 1fr;
+        height: fu.toRem(448px);
+        width: 92%;
+        column-gap: fu.toRem(20px);
+        max-width: fu.toRem(900px);
+    }
 
 
     .feature {
         width: 100%;
         height: fu.toRem(200px);
+        max-width: fu.toRem(395px);
+
+        @include m.breakpoint-up(large) {
+            width: fu.toRem(300px);
+        }
 
         .icon {
             width: 17%;
-            margin: 0 auto;
+            height: 28%; // text (in paragraph) determines the height of icon's parent's height
+            margin: 0 auto;            
+
+            img {
+                height: 100%;
+                object-fit: contain;
+            }
         }
 
-        &:nth-child(1) {
-            height: fu.toRem(190px);
-        }
+        &:last-child {
 
-        &:nth-child(2) {
-            height: fu.toRem(230px);
+            .icon {
+                height: 20%;
+            }
         }
 
         .text {

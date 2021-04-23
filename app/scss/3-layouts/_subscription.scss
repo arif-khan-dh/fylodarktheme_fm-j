@@ -1,18 +1,39 @@
 @use '../1-abstracts/functions' as fu;
 @use '../1-abstracts/colors' as c;
+@use '../1-abstracts/mixins' as m;
 
 .subscription {
     --h: #{fu.toRem(358px)};
+    --w-medium-max: #{fu.toRem(436px)};
     position: absolute;
     top: calc(-0.5 * var(--h));
     width: 100%;
+    max-width: var(--w-medium-max);
     height: var(--h);
     padding: 0 fu.toRem(24px) fu.toRem(38px);
     background-color: c.$dark-blue1-intro;
     border-radius: fu.toRem(12px);
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
     box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.3);
+
+    @include m.breakpoint-up(medium) {
+        left: calc(50% - calc(var(--w-medium-max) / 2));
+    }
+
+    @include m.breakpoint-up(xmedium) {
+        width: 87%;
+        max-width: calc(var(--w-medium-max) * 2);
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+
+    @include m.breakpoint-up(xlarge) {
+        padding-left: fu.toRem(40px);
+        padding-right: fu.toRem(40px);
+        height: calc(var(--h) - #{fu.toRem(60px)});
+    }
 
     .text {
         margin-top: auto;
@@ -23,13 +44,38 @@
 
         .para{
             padding-bottom: fu.toRem(28px);
+            max-width: fu.toRem(660px);
         }        
     }
 
     .subs-io {
+        width: 100%;
+        max-width: fu.toRem(316px);
+
+        @include m.breakpoint-up(xlarge) {
+            max-width: fu.toRem(650px);
+            display: flex;
+            justify-content: center;
+            padding: 0 3%;
+            height: fu.toRem(67px);
+        }
+
+        .btn {
+
+            @include m.breakpoint-up(xlarge) {
+                flex-grow: 2;
+                margin-left: fu.toRem(10px);
+            }
+
+        }
         
         .email {
             margin-bottom: fu.toRem(24px);
+
+            @include m.breakpoint-up(xlarge) {
+                flex-grow: 5;
+                margin-bottom: 0;
+            }
 
             input {
                 width: 100%;
@@ -46,6 +92,7 @@
             .error-msg {
                 max-height: 0;
                 opacity: 0;
+                margin-left: fu.toRem(20px);
                 transition: all var(--transition) ease-in-out;
             }
 

@@ -33,7 +33,7 @@ p.para {
 }
 
 .btn {
-    color: white;
+    color: var(--color);
     font-family: fo.$font-raleway;
     font-weight: 700;
 }
@@ -44,8 +44,37 @@ p.para {
     }
 }
 
+.features {
+
+    .headline {
+
+        @include m.breakpoint-up(large) {
+            font-size: fo.$size-sm;
+        }
+    }
+}
+
 .secondary {
     text-align: left;
+
+    @include m.breakpoint-up(small) {
+        text-align: center;
+    }
+
+    @include m.breakpoint-up(large) {
+        text-align: left;
+    }
+
+    .headline {
+
+        @include m.breakpoint-up(large) {
+            font-size: fo.$size-xxlg;
+        }
+    }
+
+    .para {
+        font-size: fo.$size-xxsm;
+    }
 
     a {
         color: c.$cyan;
@@ -88,6 +117,18 @@ p.para {
     .headline {
         font-weight: 700;
         font-size: fo.$size-sm;
+
+        @include m.breakpoint-up(small) {
+            font-size: fo.$size-md;
+        }
+
+        @include m.breakpoint-up(xmedium) {
+            font-size: fo.$size-lg;
+        }
+
+        @include m.breakpoint-up(large) {
+            font-size: fo.$size-xlg;
+        }
     }
 
     .para {
@@ -101,6 +142,10 @@ p.para {
     .error-msg {
         font-size: fo.$size-xxsm;
         color: c.$light-red;
+
+        @include m.breakpoint-up(xlarge) {
+            text-align: left;
+        }
     }
 
     .btn {
@@ -114,8 +159,22 @@ p.para {
         font-size: fo.$size-xsm;
         text-align: left;
 
-        .phone {
-            // font-size: fo.$size-xsm;
+        .para {
+
+            @include m.breakpoint-up(large) {
+                font-size: fo.$size-xxsm;
+            }
+
+            @include m.breakpoint-up(xxlarge) {
+                font-size: fo.$size-xsm;
+            }
+        }
+
+        .links {
+
+            @include m.breakpoint-up(small) {
+                text-align: center;
+            }
         }
     }
 

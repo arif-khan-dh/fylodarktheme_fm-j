@@ -1,27 +1,66 @@
 @use '../1-abstracts/functions' as fu;
 @use '../1-abstracts/colors' as c;
+@use '../1-abstracts/mixins' as m;
 
 .secondary {
     height: fu.toRem(816px);
     width: 87%;
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
+
+    @include m.breakpoint-up(large) {
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        min-height: fu.toRem(570px);
+        width: 89%;
+        padding-bottom: fu.toRem(70px);
+        height: 45vmax;
+        max-height: fu.toRem(600px);
+        // max-width: fu.toRem(1132px);
+        max-width: var(--section-max-width);
+    }
 
     .illustration {
         margin-top: auto;
+        max-width: fu.toRem(460px);
+
+        @include m.breakpoint-up(large) {
+            margin-bottom: auto;
+            width: 50%;
+            // max-width: fu.toRem(310px);
+        }
     }
 
     .text {
         margin-bottom: auto;
         padding-top: fu.toRem(52px);
 
-        p, .link {
-            margin-top: fu.toRem(24px);
+        @include m.breakpoint-up(large) {
+            margin-top: auto;
+            // width: 50%;
+            width: 42%;
+            // padding-left: fu.toRem(50px);
+            padding-top: fu.toRem(64px);            
+        }
+
+        .headline {
+            max-width: fu.toRem(360px);
+        }
+
+        .para {
+            padding-top: fu.toRem(24px);
+
+            @include m.breakpoint-up(large) {
+                padding-top: fu.toRem(10px);
+                max-width: fu.toRem(440px);
+            }
         }
 
         .link {
             display: flex;
             align-items: end;
+            margin-top: fu.toRem(24px);
             border-bottom: 1px solid c.$cyan;
             width: max-content;
             padding-bottom: fu.toRem(6px);
@@ -33,6 +72,16 @@
                 svg > g > g > use {
                     fill: white;
                 }
+            }
+
+            @include m.breakpoint-up(small) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @include m.breakpoint-up(large) {
+                margin-top: fu.toRem(14px);
+                margin-left: 0;
             }
 
             .icon {

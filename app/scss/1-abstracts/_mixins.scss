@@ -1,15 +1,17 @@
-@use './functions' as fun;
-@use './colors';
+@use './functions' as fu;
+@use './colors' as c;
 
+// Width of vertical scrollbar is 17px
 $breakpoint-up: (
-    "xxxxlarge": fun.toRem(1440px),
-    "xxxlarge": fun.toRem(1218px),
-    "xxlarge": fun.toRem(1130px),
-    // "xxlarge": fun.toRem(1130px),
-    "xlarge": fun.toRem(955px),
-    "large": fun.toRem(720px), 
-    "medium": fun.toRem(620px), 
-    "small": fun.toRem(460px)
+    "xxxxxlarge": fu.toRem(1440px),
+    "xxxxlarge": fu.toRem(1160px),
+    "xxxlarge": fu.toRem(1160px),
+    "xxlarge": fu.toRem(1085px),
+    "xlarge": fu.toRem(900px),
+    "large": fu.toRem(737px),
+    "xmedium": fu.toRem(650px), 
+    "medium": fu.toRem(570px), 
+    "small": fu.toRem(516px)
 );
 
 @mixin breakpoint-down ($size) {
@@ -25,7 +27,7 @@ $breakpoint-up: (
 }
 
 @mixin gap-below-illustration() {
-    margin-top: fun.toRem(46px);
+    margin-top: fu.toRem(46px);
 
     @include breakpoint-up(small) {
         margin-top: 10vmin;    
@@ -46,7 +48,7 @@ $breakpoint-up: (
     .btn {
         width: 35%;
         margin-top: 0;
-        margin-left: fun.toRem(10px);
+        margin-left: fu.toRem(10px);
     }
 }
 
@@ -58,5 +60,5 @@ $breakpoint-up: (
 }
 
 @mixin box-shadow() {
-    box-shadow: 0 fun.toRem(5px) fun.toRem(5px) rgba($color: colors.$light-gray, $alpha: 0.7);
+    box-shadow: 0 fu.toRem(5px) fu.toRem(5px) rgba($color: colors.$light-gray, $alpha: 0.7);
 }

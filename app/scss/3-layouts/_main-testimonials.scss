@@ -1,17 +1,50 @@
 @use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/mixins' as m;
 
 .testimonials {
     height: fu.toRem(548px);
-    width: 76%;
+    // width: 76%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     background-image: url(../../../images/bg-quotes.png);
     background-repeat: no-repeat;
     background-size: auto fu.toRem(20px);
 
+    @include m.breakpoint-up(large) {
+        flex-flow: row wrap;
+        justify-content: space-around;        
+        width: 89%;
+        // height: fu.toRem(394px);
+        height: auto;
+        max-width: fu.toRem(1034px);
+    }
 
-    .card {
+    @include m.breakpoint-up(xxlarge) {
+        justify-content: space-between;
+    }
+
+    .testimonial {
         width: 100%;
         margin-top: fu.toRem(20px);
+        max-width: fu.toRem(333px);
+
+        @include m.breakpoint-up(large) {
+            width: 40%;
+            // max-width: 333px;
+        }
+
+        @include m.breakpoint-up(xxlarge) {
+            // width: fu.toRem(286px);            
+            width: 32%;
+            max-width: fu.toRem(315px);
+        }
+
+        &:not(:first-child) {
+
+            @include m.breakpoint-up(xxlarge) {
+                margin-left: fu.toRem(10px);
+            }
+            
+        }
     }
 }

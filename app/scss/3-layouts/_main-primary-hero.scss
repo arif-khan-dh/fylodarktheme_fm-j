@@ -1,11 +1,25 @@
 @use '../1-abstracts/functions' as fu;
 @use '../1-abstracts/colors' as c;
+@use '../1-abstracts/mixins' as m;
 
 .primary-wrapper {
     background: 
         url(../../../images/bg-curvy-mobile.svg) bottom calc(calc(48 / 85) * 100%) left / 100% 15% no-repeat, // (48 / (parent height - actual bg image height)) * 100%
         linear-gradient(to top, c.$dark-blue2-main 48%, c.$dark-blue1-intro 48%)
     ;
+
+    @include m.breakpoint-up(small) {
+        background: 
+            url(../../../images/bg-curvy-desktop.svg) top calc(69.75vw - 15%) left / 100% 15% no-repeat, // (48 / (parent height - actual bg image height)) * 100%
+            linear-gradient(to bottom, c.$dark-blue1-intro calc(69.75vw + 1rem), c.$dark-blue2-main calc(69.75vw + 1rem))
+        ;
+    }
+
+    @include m.breakpoint-up(large) {
+        background: 
+            url(../../../images/bg-curvy-desktop.svg) bottom  left / 100% 40% no-repeat
+        ;
+    }
 }
 
 .primary {
@@ -14,21 +28,24 @@
     height: fu.toRem(720px);    
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;    
-
-    // background: 
-    //     url(../../../images/bg-curvy-mobile.svg) bottom calc(calc(48 / 85) * 100%) left / 100% 15% no-repeat, // (48 / (parent height - bg image height)) * 100%
-    //     linear-gradient(to top, c.$dark-blue2-main 48%, c.$dark-blue1-intro 48%)
-    // ;
+    align-items: center;
 
     .illustration {
         margin: auto auto 0;
         width: 80%;
+        min-width: fu.toRem(300px);
+        max-width: fu.toRem(370px);
     }
 
     .cta {
         width: 88%;
+        padding-top: fu.toRem(38px);
         padding-bottom: fu.toRem(128px);
+        max-width: fu.toRem(350px);
+
+        @include m.breakpoint-up(large) {
+            max-width: fu.toRem(450px);
+        }
 
         .headline {
             padding-bottom: fu.toRem(20px);

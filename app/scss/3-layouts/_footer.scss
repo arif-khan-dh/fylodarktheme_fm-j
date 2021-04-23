@@ -1,53 +1,158 @@
 @use '../1-abstracts/functions' as fu;
 @use '../1-abstracts/colors' as c;
+@use '../1-abstracts/mixins' as m;
 
 .footer-wrapper {
     background-color: c.$dark-blue3-footer;
     margin-top: fu.toRem(336px);
+
+    @include m.breakpoint-up(large) {
+        margin-top: fu.toRem(286px);
+    }
 }
 
 .footer {
     --wrapper-child-width: calc(var(--container-width) * calc(89 / 100));
+    --footer-h: #{fu.toRem(1032px)};
     margin: 0 auto;
     padding-top: fu.toRem(256px);
-    height: fu.toRem(1032px);
-    width: var(--wrapper-child-width);
-    // width: calc(var(--container-width) * var(--container-width));    
+    height: var(--footer-h);
+    width: var(--wrapper-child-width);  
     position: relative;
-    
+
+    @include m.breakpoint-up(medium) {
+        height: calc(var(--footer-h) - #{fu.toRem(148px)});
+    }
+
+    @include m.breakpoint-up(large) {
+        height: calc(var(--footer-h) - #{fu.toRem(450px)});
+    }
 
     .logo {
         width: 47%;
         max-width: fu.toRem(200px);
         padding-left: fu.toRem(20px);
+
+        @include m.breakpoint-up(small){
+            margin: 0 auto;
+        }
+
+        @include m.breakpoint-up(large){
+            margin: 0 auto 0 0;
+            padding-left: 0;
+        }
     }
 
     .sub-logo {
         padding-top: fu.toRem(48px);
+        
+        @include m.breakpoint-up(large) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include m.breakpoint-up(xlarge) {
+            justify-content: start;
+        }
 
         .info {
             display: grid;
             grid-template-columns: 1fr auto;
             grid-template-rows: auto repeat(2, 1fr);
             gap: fu.toRem(22px);
+            max-width: fu.toRem(320px);
+            margin: 0 auto;
+
+            @include m.breakpoint-up(large) {
+                max-width: fu.toRem(220px);
+                margin: 0 0 0 0;
+            }
+
+            @include m.breakpoint-up(xlarge) {
+                max-width: fu.toRem(482px);
+                width: 50%;
+                flex-grow: 1;
+                grid-template-columns: repeat(2, 1fr auto);
+            }
+
+            .para {
+                max-width: fu.toRem(285px);
+
+                @include m.breakpoint-up(xlarge) {
+                    // grid-row-start: span 2;
+                    grid-row: 1 / -1;
+                }
+            }
 
             .icon {
                 width: fu.toRem(16px);
                 display: inline-block;
                 align-self: center;
 
+                @include m.breakpoint-up(xlarge) {
+                    align-self: start;
+                }
+
+                &:nth-child(5) {
+
+                    @include m.breakpoint-up(xlarge) {
+                        padding-top: fu.toRem(4px);
+                    }
+                }
+
                 &:first-child {
                     align-self: flex-start;
                     padding-top: fu.toRem(4px);
+
+                    @include m.breakpoint-up(xlarge) {
+                        // grid-row-start: span 2;
+                        // grid-row: 1 /span 2;
+                        grid-row: 1 / -1;
+                    }
                 }
             }
         }
 
         .links {
             padding-top: fu.toRem(30px);
+            display: flex;
+            flex-flow: row wrap;
+            width: 80%;
+
+            @include m.breakpoint-up(small) {
+                margin: 0 auto;
+                justify-content: center;
+            }
+
+            @include m.breakpoint-up(medium) {
+                max-width: fu.toRem(395px);
+            }
+
+            @include m.breakpoint-up(large) {
+                margin: 0;
+                padding-top: 0;
+                max-width: fu.toRem(200px);
+            }
+
+            // debug
+            @include m.breakpoint-up(xlarge) {
+                width: 30%;
+                max-width: 100%;
+                padding-left: 3%;
+                flex-grow: 1;
+            }
 
             .link-group {
                 padding-top: fu.toRem(54px);
+                width: 60%;
+
+                @include m.breakpoint-up(medium) {
+                    width: 50%;
+                }
+
+                @include m.breakpoint-up(large) {
+                    padding-top: 0;
+                }
 
                 .link {
                     &:not(:first-child) {
@@ -61,6 +166,16 @@
             padding-top: fu.toRem(74px);
             display: flex;
             justify-content: center;
+
+            @include m.breakpoint-up(large) {
+                padding-top: 0;
+            }
+
+            // debug
+            @include m.breakpoint-up(xlarge) {
+                width: 20%;
+                flex-grow: 1;
+            }
             
             .icon {
                 --d: #{fu.toRem(28px)};

@@ -20,8 +20,11 @@ html {
     --btn-input-border-radius: #{fu.toRem(30px)};
     --transition: 250ms;
     --container-width: 89%;
+    --container-max-width: #{fu.toRem(1440px)};
     --wrapper-child-width: calc(var(--container-width) * calc(89 / 100));
-    --mb-primary-hero-height: #{fu.toRem(720px)};    
+    --mb-primary-hero-height: #{fu.toRem(720px)};
+    --mb-min-width: #{fu.toRem(375px)};
+    --section-max-width: #{fu.toRem(1132px)};
 }
 
 body {
@@ -31,10 +34,9 @@ body {
 
     display: flex;
     justify-content: center;
-
-    // debug
-    // background-color: gray;
-    background-image: linear-gradient(c.$dark-blue1-intro fu.toRem(700px), c.$dark-blue2-main fu.toRem(700px));
+    
+    // background-image: linear-gradient(c.$dark-blue1-intro fu.toRem(719px), c.$dark-blue2-main fu.toRem(719px));
+    background-image: linear-gradient(c.$dark-blue1-intro fu.toRem(768px), c.$dark-blue2-main fu.toRem(768px));
 }
 
 img, input {
@@ -49,7 +51,8 @@ ul {
 
 .container {
     width: var(--container-width);
-    min-width: fu.toRem(375px);
+    min-width: var(--mb-min-width);
+    max-width: var(--container-max-width);
 
     display: flex;
     flex-flow: column nowrap;
@@ -62,6 +65,7 @@ ul {
 
 .wrapper {
     width: calc(100vw - 17px);
+    min-width: var(--mb-min-width);
     // margin-left: calc(calc(-50vw + 50%) + 8px);
 }
 

@@ -1,5 +1,6 @@
 @use '../1-abstracts/functions' as fu;
 @use '../1-abstracts/colors' as c;
+@use '../1-abstracts/mixins' as m;
 
 .header {
     align-self: center;
@@ -9,4 +10,13 @@
     align-items: center;
     background-color: c.$dark-blue1-intro ;
     width: 88%;
+    
+    .logo {
+        cursor: pointer;
+
+        @include m.breakpoint-up(xmedium) {
+            width: 17%;
+            max-width: fu.toRem(140px);
+        }
+    }
 }
